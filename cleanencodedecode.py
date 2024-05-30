@@ -1,9 +1,15 @@
-import random
+# required modules imported
+# random modules helping us with the operations to generate much stronger and random characters
+# string module to work with different methods of the string
+
+import random    
 import string
+# this helps with the generating of the random strings we'll need later on the program
 
 def pref(length): 
     result = ''.join((random.choice(string.ascii_lowercase) for x in range(length)))
     return result
+# this userdefined function helps with the genneration of the encrypted form of the strings entered by the user
 
 def encode():
     userin=input("ENTER THE STRING TO ENCODE  : ")
@@ -34,6 +40,7 @@ def encode():
         if(to_Re.capitalize()=='Again'):
             encode()
     
+# decode function with the purpose of decoding the code encoded by the funciton above
 
 def decode():
     user_in=input("ENTER THE ENCODED STRING TO FURTHER DECODE:\n ")
@@ -43,6 +50,7 @@ def decode():
     decoded_versn=new_userin[1:]
     print(f"THE DECODED VERSION OF {user_in} is {decoded_versn}")
 
+#  all the controls and the menu of the program to be accessed as well as monitored by the main_menu funciton
 
 def main_menu():
     print("what do you expect to do with this programm??")
@@ -54,5 +62,5 @@ def main_menu():
     elif(act.capitalize()=='Decode'):
         decode()
 
-
+# main menu function call to inititate the program on command.
 main_menu()
